@@ -1,0 +1,194 @@
+<div id="game" class = "container" style="padding-top: 100px;">
+    <div class="row" >
+        <div class= "col-xs-12">
+            <div class="table">
+                <table cellpadding="0" cellspacing="0" id="tblTest">
+                    <tr >
+                        <td *ngIf=" (!belongToArrWinner(0) && !belongToArrSecWinner(0))">
+                            <div class="inner"(click)="clickTd(0)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[0]" #row0 >X</div>
+                                <div *ngIf="rowsSecond[0]"  #row0>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(0)" style="background-color: yellow; color:#000000;">
+                            <div class="inner"(click)="clickTd(0)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[0]" #row0>X</div>
+                                <div *ngIf="rowsSecond[0]" #row0>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrSecWinner(0) && !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner"(click)="clickTd(0)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[0]" #row0>X</div>
+                                <div *ngIf="rowsSecond[0]" #row0>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" (!belongToArrWinner(1) && !belongToArrSecWinner(1)) ">
+                            <div class="inner" (click)="clickTd(1)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[1]" #row1>X</div>
+                                <div *ngIf="rowsSecond[1]" #row1>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(1)" style="background-color: yellow; color:#000000;">
+                            <div class="inner" (click)="clickTd(1)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[1]" #row1>X</div>
+                                <div *ngIf="rowsSecond[1]" #row1>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrSecWinner(1) && !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner" (click)="clickTd(1)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[1]" #row1>X</div>
+                                <div *ngIf="rowsSecond[1]" #row1>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" (!belongToArrWinner(2) && !belongToArrSecWinner(2)) ">
+                            <div class="inner" (click)="clickTd(2)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[2]" #row2>X</div>
+                                <div *ngIf="rowsSecond[2]">O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(2)" style="background-color: yellow; color:#000000;">
+                            <div class="inner" (click)="clickTd(2)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[2]" #row2>X</div>
+                                <div *ngIf="rowsSecond[2]" #row2>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf="belongToArrSecWinner(2) && !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner" (click)="clickTd(2)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[2]" #row2>X</div>
+                                <div *ngIf="rowsSecond[2]" #row2>O</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td *ngIf=" (!belongToArrWinner(3) && !belongToArrSecWinner(3))">
+                            <div class="inner" (click)="clickTd(3)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[3]" #row3>X</div>
+                                <div *ngIf="rowsSecond[3]"#row3>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(3)" style="background-color: yellow; color:#000000;">
+                            <div class="inner" (click)="clickTd(3)" [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[3]" #row3>X</div>
+                                <div *ngIf="rowsSecond[3]" #row3>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrSecWinner(3)&& !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner" (click)="clickTd(3)" [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[3]" #row3>X</div>
+                                <div *ngIf="rowsSecond[3]" #row3>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" (!belongToArrWinner(4)&& !belongToArrSecWinner(4)) ">
+                            <div class="inner"(click)="clickTd(4)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[4]" #row4>X</div>
+                                <div *ngIf="rowsSecond[4]" #row4>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(4)" style="background-color: yellow; color:#000000;">
+                            <div class="inner"(click)="clickTd(4)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[4]"#row4>X</div>
+                                <div *ngIf="rowsSecond[4]" #row4>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrSecWinner(4)&& !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner"(click)="clickTd(4)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[4]" #row4>X</div>
+                                <div *ngIf="rowsSecond[4]" #row4>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf="( !belongToArrWinner(5) && !belongToArrSecWinner(5)) ">
+                            <div class="inner"(click)="clickTd(5)" [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[5]"#row5>X</div>
+                                <div *ngIf="rowsSecond[5]" #row5>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(5)" style="background-color: yellow; color:#000000;">
+                            <div class="inner"(click)="clickTd(5)" [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[5]" #row5>X</div>
+                                <div *ngIf="rowsSecond[5]" #row5>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf="belongToArrSecWinner(5)&& !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner"(click)="clickTd(5)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[5]" #row5>X</div>
+                                <div *ngIf="rowsSecond[5]" #row5>O</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngIf="( !belongToArrWinner(6) && !belongToArrSecWinner(6)) ">
+                            <div class="inner" (click)="clickTd(6)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[6]" #row6>X</div>
+                                <div *ngIf="rowsSecond[6]" #row6>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(6)" style="background-color: yellow; color:#000000;">
+                            <div class="inner" (click)="clickTd(6)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[6]" #row6>X</div>
+                                <div *ngIf="rowsSecond[6]" #row6>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrSecWinner(6)&& !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner" (click)="clickTd(6)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[6]" #row6>X</div>
+                                <div *ngIf="rowsSecond[6]" #row6>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" (!belongToArrWinner(7) && !belongToArrSecWinner(7)) ">
+                            <div class="inner" (click)="clickTd(7)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[7]" #row7>X</div>
+                                <div *ngIf="rowsSecond[7]" #row7>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(7)" style="background-color: yellow; color:#000000;">
+                            <div class="inner" (click)="clickTd(7)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[7]" #row7>X</div>
+                                <div *ngIf="rowsSecond[7]" #row7>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf="belongToArrSecWinner(7)&& !isLoading" style="background-color: lightblue; color:#000000;">
+                            <div class="inner" (click)="clickTd(7)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[7]" #row7>X</div>
+                                <div *ngIf="rowsSecond[7]" #row7>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" (!belongToArrWinner(8) && !belongToArrSecWinner(8) )">
+                            <div class="inner" (click)="clickTd(8)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[8]" #row8>X</div>
+                                <div *ngIf="rowsSecond[8]" #row8>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf=" belongToArrWinner(8)" style="background-color: yellow; color:#000000;">
+                            <div class="inner" (click)="clickTd(8)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[8]" #row8>X</div>
+                                <div *ngIf="rowsSecond[8]" #row8>O</div>
+                            </div>
+                        </td>
+                        <td *ngIf="belongToArrSecWinner(8)&& !isLoading" style="background-color:lightblue; color:#000000;">
+                            <div class="inner" (click)="clickTd(8)"  [ngClass]="{'disabled-div': isDisable}">
+                                <div *ngIf="rows[8]"#row8>X</div>
+                                <div *ngIf="rowsSecond[8]" #row8>O</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="winning"></div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class ="row" style="padding-top: 30px;">
+        <div class= "col-xs-12">
+        <!-- <button class ="btn btn-primary"(click)="checkResult()"> Get result</button> -->
+        <span *ngIf="resultGame" style="margin-left: 30px;">{{resultGame}}</span>
+       </div>
+       
+        
+        
+    </div>
+    <div id="win_block">
+        <span class="winner"></span>
+        <span class="again">Играть еще!</span>
+    </div>
+</div>
